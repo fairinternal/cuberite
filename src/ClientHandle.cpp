@@ -1556,6 +1556,8 @@ void cClientHandle::HandlePlayerLook(float a_Rotation, float a_Pitch, bool a_IsO
 	m_Player->SetHeadYaw    (a_Rotation);
 	m_Player->SetPitch      (a_Pitch);
 	m_Player->SetTouchGround(a_IsOnGround);
+
+	cRoot::Get()->GetPluginManager()->CallHookPlayerLook(*m_Player, a_Rotation, a_Pitch);
 }
 
 
