@@ -113,6 +113,7 @@ public:
 		HOOK_PLAYER_FOOD_LEVEL_CHANGE,
 		HOOK_PLAYER_JOINED,
 		HOOK_PLAYER_LEFT_CLICK,
+		HOOK_PLAYER_LOOK,
 		HOOK_PLAYER_MOVING,
 		HOOK_PLAYER_OPENING_WINDOW,
 		HOOK_PLAYER_PLACED_BLOCK,
@@ -261,6 +262,7 @@ public:
 	bool CallHookPlayerFoodLevelChange    (cPlayer & a_Player, int a_NewFoodLevel);
 	bool CallHookPlayerJoined             (cPlayer & a_Player);
 	bool CallHookPlayerLeftClick          (cPlayer & a_Player, int a_BlockX, int a_BlockY, int a_BlockZ, char a_BlockFace, char a_Status);
+	bool CallHookPlayerLook               (cPlayer & a_Player, double a_Yaw, double a_Pitch);
 	bool CallHookPlayerMoving             (cPlayer & a_Player, const Vector3d & a_OldPosition, const Vector3d & a_NewPosition);
 	bool CallHookPlayerOpeningWindow      (cPlayer & a_Player, cWindow & a_Window);
 	bool CallHookPlayerPlacedBlock        (cPlayer & a_Player, const sSetBlock & a_BlockChange);

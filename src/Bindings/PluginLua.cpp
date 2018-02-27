@@ -650,6 +650,15 @@ bool cPluginLua::OnPlayerLeftClick(cPlayer & a_Player, int a_BlockX, int a_Block
 
 
 
+bool cPluginLua::OnPlayerLook(cPlayer & a_Player, double a_Yaw, double a_Pitch)
+{
+	return CallSimpleHooks(cPluginManager::HOOK_PLAYER_LOOK, &a_Player, a_Yaw, a_Pitch);
+}
+
+
+
+
+
 bool cPluginLua::OnPlayerMoving(cPlayer & a_Player, const Vector3d & a_OldPosition, const Vector3d & a_NewPosition)
 {
 	return CallSimpleHooks(cPluginManager::HOOK_PLAYER_MOVING, &a_Player, a_OldPosition, a_NewPosition);
@@ -1074,6 +1083,7 @@ const char * cPluginLua::GetHookFnName(int a_HookType)
 		case cPluginManager::HOOK_PLAYER_EATING:                return "OnPlayerEating";
 		case cPluginManager::HOOK_PLAYER_JOINED:                return "OnPlayerJoined";
 		case cPluginManager::HOOK_PLAYER_LEFT_CLICK:            return "OnPlayerLeftClick";
+		case cPluginManager::HOOK_PLAYER_LOOK:                  return "OnPlayerLook";
 		case cPluginManager::HOOK_PLAYER_MOVING:                return "OnPlayerMoving";
 		case cPluginManager::HOOK_PLAYER_OPENING_WINDOW:        return "OnPlayerOpeningWindow";
 		case cPluginManager::HOOK_PLAYER_PLACED_BLOCK:          return "OnPlayerPlacedBlock";
